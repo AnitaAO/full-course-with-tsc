@@ -1,0 +1,34 @@
+"use strict";
+let fname;
+fname = 'anita';
+const newname = fname.toUpperCase();
+console.log(newname);
+let age;
+age = 25;
+age = 25.5;
+let dob = '25';
+const result = parseInt(dob);
+console.log(result);
+let isLoading = false;
+console.log(isLoading);
+let emptyList;
+emptyList = ['Anita', 'Grace', 'Amarachi'].sort();
+let deptList;
+deptList = [1, 2, 3, 4, 5];
+let results = deptList.filter((num) => num > 2);
+let num = deptList.find((num) => num === 2);
+console.log(results);
+console.log(num);
+console.log(emptyList);
+let myShirt = 2 /* color.Green */;
+console.log(myShirt);
+let swapNumbs;
+function swapNumbers(num1, num2) {
+    return [num2, num1];
+}
+swapNumbs = swapNumbers(10, 20);
+swapNumbs[0];
+swapNumbs[1];
+let department;
+department = 'IT';
+department = 1;
