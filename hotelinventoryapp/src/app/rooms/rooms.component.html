@@ -1,0 +1,30 @@
+<!--line 2 - interpolation example-->
+<h1>Welcome to {{hotelName}}</h1>
+
+<!--line 5 - event binding example using div html attribute property 'hidden'-->
+<!--you can still use ngIf in place of this event binding, infact use ngIf more to help free up the DOM-->
+<div [hidden]="showNoOfRooms">
+<!--<div *ngIf="showNoOfRooms">-->
+  <p>Number of Rooms:</p>
+<!--  line 10 - property binding (using div html attribute property).-->
+<!--  Note that for line 10, property binding can still work-->
+  <div [innerText]="numberOfRooms"></div>
+<!--  <div>{{numberOfRooms}}</div>-->
+<!--  <p>{{numberOfRooms}}</p>-->
+</div>
+
+<button (click)="toggle()" type="button">Toggle</button>
+
+<!--display conditional statement, -->
+<!--{{ rooms?.availableRooms ?? 'No Rooms'}}-->
+<!--chaining - if line 19 is not available, display line 20-->
+<!--<div *ngIf="rooms?.availableRooms">-->
+<!--  Rooms List-->
+<!--</div>-->
+
+<div *ngIf="rooms.availableRooms > 0">
+  Rooms List
+</div>
+
+<!--Types of directives: 1. structural, custom and built-in directives-->
+<!--Built-in directives include: ngIf, ngFor, switchCase, ngStyle,-->
