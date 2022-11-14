@@ -1,23 +1,23 @@
 //for chaining object and ngIf display event
-// export interface Rooms{
+// export interface RoomsData{
 //   totalRooms?: number
 //   availableRooms?: number
 //   bookedRooms?: number
 //}
 
-import * as url from "url";
-
-export interface Rooms{
+export interface IRooms{
   totalRooms: number
   availableRooms: number
   bookedRooms: number
 }
 
-export interface RoomList{
+export interface IRoomsItems{
+  roomNumber: number
   checkinTime: Date
   checkoutTime: Date
   roomType: string
   amenities: string
   price: number
   photos: string
+  ratings: number
 }

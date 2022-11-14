@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
   title = 'hotelinventoryapp';
+
+  //used for switchcase example
+  role: string = 'Admin';
 }
