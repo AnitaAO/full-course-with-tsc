@@ -1,5 +1,5 @@
 <div>
-  <h2> Room Lists</h2>
+  <h2>{{ title }}</h2>
   <table class="table">
     <thead>
     <tr>
@@ -18,7 +18,7 @@
     <tbody>
     <tr
       [ngClass]="e? 'even' : 'odd'"
-      *ngFor="let row of Table | slice: 0: 3, let e=even, let o=odd let i=index"
+      *ngFor="let row of Table  let e = even, let o = odd let i = index"
     >
       <td>{{i | percent}}</td>
       <td>{{e? 'even' : 'odd' | uppercase}}</td>
@@ -30,11 +30,17 @@
       <td>{{row.checkoutTime | date : 'dd/mm/yyyy'}}</td>
       <td>{{row.ratings | number: '1.0'}}</td>
       <td>
+<!--        <button-->
+<!--          class="btn btn-primary"-->
+<!--          (click)="selectRow(row)"-->
+<!--        >-->
+<!--          Select-->
+<!--        </button>-->
         <button
-          class="btn btn-primary"
-          (click)="selectRow(row)"
+          class="btn btn-danger"
+          [routerLink]="['/rooms', row.roomNumber]"
         >
-          Select
+          Book Now!
         </button>
       </td>
     </tr>

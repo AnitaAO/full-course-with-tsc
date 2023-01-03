@@ -1,5 +1,8 @@
 <!--line 2 - interpolation example-->
-<h1>Welcome to {{hotelName}}</h1>
+<!--<h1>Welcome to {{hotelName}}</h1>-->
+<app-header></app-header>
+<!--<app-header></app-header>-->
+<!--<app-header></app-header>-->
 <!--line 5 - event binding example using div html attribute property 'hidden'-->
 <!--you can still use ngIf in place of this event binding, in fact use ngIf more to help free up the DOM-->
 <div [hidden]="showNoOfRooms">
@@ -14,18 +17,27 @@
     <!--  Note that for line 13, property binding can still work-->
   </div>
 </div>
+<h1>{{getError$ | async}}</h1>
+<!--<h1>Number of rooms: {{roomsCount$ | async}}</h1>-->
+<button (click)="addRoom()">Add room</button>
+<!--<button (click)="editRoom()">Edit room</button>-->
+<!--<button (click)="deleteRoom()">Edit room</button>-->
 
-<!--<button (click)="addRoom">Add room</button>-->
-
-{{ rooms?.availableRooms ?? 'No rooms'}}
+<h1>{{totalBytes}} loaded!</h1>
+<!--{{ rooms?.availableRooms?? 'No rooms'}}-->
 
 <div *ngIf="selectedRow">
   {{selectedRow | json}}
 </div>
 
 <div *ngIf="rooms.availableRooms > 0">
+<!--  this is for async pipe when a string object is used to get a service-->
+<!--<div *ngIf="rooms$ | async as roomItems ">-->
+<!--  <app-room-lists [Table]="roomItems | async"-->
   <app-room-lists [Table]="roomItems"
-  (selectedRow)="selectRow($event)">
+  [title]="title"
+  (selectedRow)="selectRow($event)"
+  >
   </app-room-lists>
 <!--<app-room-lists (roomListsSelected)="roomListsSelect($event)"></app-room-lists>-->
  <!--{{roomList | json}} - an example of jsonPipe-->

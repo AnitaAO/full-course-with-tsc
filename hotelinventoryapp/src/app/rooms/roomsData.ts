@@ -12,7 +12,7 @@ export interface IRooms{
 }
 
 export interface IRoomsItems{
-  roomNumber: number
+  roomNumber?: number | string
   checkinTime: Date
   checkoutTime: Date
   roomType: string
