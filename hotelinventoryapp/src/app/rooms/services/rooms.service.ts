@@ -69,6 +69,21 @@ export class RoomsService {
     return this.roomItems
   }
 
+  addRoom() {
+    const row: IRoomsItems = {
+      roomNumber: 3,
+      amenities: 'Air conditioner, Free Wi-Fi, Bathroom, TV, Kitchen',
+      roomType: 'Private suite',
+      price: 10000,
+      photos: 'https://unsplash.com/photos/CbZ4EDP__VQ',
+      checkinTime: new Date('11-Nov-2021'),
+      checkoutTime: new Date('12-Nov-2021'),
+      ratings: 4.5,
+    }
+    // this.roomItems.push(row)
+    this.roomItems = [...this.roomItems, row ]
+  };
+
   //GET
   //this method gets the data from the backend api
   // getRooms(){

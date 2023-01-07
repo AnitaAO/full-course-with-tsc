@@ -17,9 +17,12 @@
     <!--  Note that for line 13, property binding can still work-->
   </div>
 </div>
+<router-outlet></router-outlet>
+
 <h1>{{getError$ | async}}</h1>
 <!--<h1>Number of rooms: {{roomsCount$ | async}}</h1>-->
-<button (click)="addRoom()">Add room</button>
+
+<button routerLink="add">Add room</button>
 <!--<button (click)="editRoom()">Edit room</button>-->
 <!--<button (click)="deleteRoom()">Edit room</button>-->
 
